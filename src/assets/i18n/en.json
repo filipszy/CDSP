@@ -1,0 +1,26 @@
+{
+  "title": "Request system",
+  "activityTitle": "All requests",
+  "sort": "Sort & Filter",
+  "reload": "Reload",
+  "create": "Create a new request",
+  "page": "Page",
+  "of": "of",
+  "goToPage": "Go to page",
+  "search": "Search",
+  "updateRequest": "Update Request",
+  "createRequest": "Create Request",
+  "item": {
+    "id": "ID",
+    "budget": "Budget",
+    "deadline": "Deadline",
+    "description": "Description",
+    "goodEnding": "Good Ending",
+    "needStoryteller": "Need Storyteller",
+    "storyteller": "Storyteller",
+    "reqName": "Request Name",
+    "requestor": "Requestor",
+    "wantedCharacters": "Wanted Characters",
+    "status": "Status"
+  }
+}

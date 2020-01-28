@@ -1,0 +1,222 @@
+body {
+  margin: 0px;
+  font-family: sans-serif;
+}
+
+a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #818283;
+}
+.content {
+  margin: 30px 30px;
+}
+
+.clearfix {
+  clear: both;
+}
+.space {
+  float: left;
+  width: 100%;
+}
+
+.h-10 {
+  height: 10px;
+}
+
+.h-30 {
+  height: 30px;
+}
+
+.h-60 {
+  height: 60px;
+}
+
+.w-30 {
+  width: 30px;
+}
+
+.title {
+  width: 100%;
+  font-size: 23px;
+  margin-bottom: 30px;
+  color: #000000;
+}
+
+.info-text {
+  height: 40px;
+  font-size: 14px;
+  line-height: 40px;
+}
+
+.button-info {
+  height: 40px;
+  line-height: 40px;
+  font-size: 14px;
+  color: #7C7C7B;
+  padding: 0px 15px;
+}
+
+.button {
+  height: 40px;
+  padding-left: 15px;
+  padding-right: 15px;
+  line-height: 40px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  color: #ffffff;
+  background-color: #000000;
+  cursor: pointer;
+}
+
+.button:hover {
+  background-color: #575756;
+}
+
+.button-light {
+  height: 40px;
+  padding: 0px 15px;
+  line-height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  color: #000000;
+  border: 2px solid #000000;
+  border-right: none;
+  cursor: pointer;
+}
+
+.button-light:hover {
+  border-color: #818283;
+}
+
+.button-light:last-child {
+  border-right: 2px solid #000000;
+}
+
+.form-group {
+  float: left;
+  width: 100%;
+  margin-top: 45px;
+}
+
+.form-group label {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+.half {
+  width: calc(50% - 15px);
+}
+
+.half:last-child {
+  margin-left: 30px;
+}
+
+input[type=radio] {
+  margin-top: 20px;
+}
+
+.radio-label {
+  font-weight: normal !important;
+  margin-right: 15px;
+  font-size: 15px !important;
+}
+
+.ng-invalid {
+  border-color: #831605 !important;
+}
+
+input[type=text], .multiselect-dropdown {
+  width: calc(100% - 30px) !important;
+  height: 40px;
+  margin-top: 5px;
+  padding: 0px 15px;
+  line-height: 40px;
+  font-size: 14px !important;
+  text-align: left;
+  color: #000000;
+  border: 2px solid #000000;
+  cursor: pointer;
+}
+
+.dropdown-btn, .dropdown-btn:focus {
+  border: none !important;
+  outline: none !important;
+  padding: 0px !important;
+}
+
+.dropdown-list input {
+  width: calc(100% - 26px) !important;
+}
+
+input:hover {
+  border-color: #818283;
+}
+
+textarea {
+  width: calc(100% - 30px);
+  height: 130px;
+  margin-top: 5px;
+  padding: 0px 15px;
+  line-height: 40px;
+  font-size: 14px;
+  text-align: left;
+  color: #000000;
+  border: 2px solid #000000;
+  cursor: pointer;
+}
+
+textarea:hover {
+  border-color: #818283;
+}
+
+
+.left {
+  float: left;
+}
+
+.right {
+  float: right;
+}
+
+.break {
+  width: 30px;
+  border-bottom: 1px solid #000000;
+  margin: 60px 0px 30px 0px;
+  clear: both;
+}
+
+.hide {
+  display: none;
+}
+
+table {
+  width: 100%;
+  font-size: 12px;
+}
+
+th {
+  width: auto;
+  padding-left: 10px;
+  border-bottom: 1px solid #000000;
+  font-size: 12px;
+  font-weight: bold;
+  color: #000000;
+  text-align: left;
+  vertical-align: top;
+  padding: 10px;
+}
+
+tr {
+  border-bottom: #818283;
+}
+
+td {
+  width: auto;
+  padding: 10px 10px;
+}

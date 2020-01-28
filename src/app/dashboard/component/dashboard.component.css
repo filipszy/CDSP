@@ -1,0 +1,9 @@
+.desc {
+  min-width: 180px;
+}
+.name {
+  min-width: 180px;
+}
+.chevron {
+  position: absolute;
+}
