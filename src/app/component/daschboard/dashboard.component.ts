@@ -5,6 +5,8 @@ import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 import {SortParams} from '../../model/sort-params';
 import {Router} from '@angular/router';
+import {UsersService} from '../../service/users.service';
+import {User} from '../../model/user';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,8 +24,9 @@ export class DashboardComponent implements OnInit {
   private searchText: string;
   private searchSub = new Subject<string>();
   private sortParams: SortParams;
+  private users: User[];
 
-  constructor(private requestService: RequestService, private router: Router) {
+  constructor(private requestService: RequestService, private router: Router, private usersService: UsersService) {
     this.sortParams = {key: '', order: ''};
     this.limitRequests = 10;
     this.pageChanged.pipe(
@@ -44,8 +47,21 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.page = 1;
+    this.getUsers();
     this.getRequestsPagination(this.page);
     this.loadData();
+  }
+
+  private getUsers() {
+    this.usersService.getUsers().subscribe(response => this.users = response);
+  }
+
+  private requestor(id: number) {
+    const user = this.users.filter( f => {
+      return f.Id === id;
+    })[0];
+
+    return user.DisplayName;
   }
 
   private navigate(id: number) {
