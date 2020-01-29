@@ -7,28 +7,36 @@
   {{"activityTitle" | translate}}
 </div>
 <div class="left">
-  <input class="button-light" placeholder="{{'search' | translate}}" [(ngModel)]="searchText" (ngModelChange)="search($event)" />
+  <input class="button-light" placeholder="{{'search' | translate}}" [(ngModel)]="searchText"
+         (ngModelChange)="search($event)"/>
 </div>
 <div class="clearfix h-30"></div>
 <div class="left">
   <div class="button-info left">{{"page" | translate}} {{page || 1}} {{"of" | translate}} {{pages}}.</div>
   <div class="button-info left">{{"goToPage" | translate}}:</div>
-  <input type="text" class="button-light left w-30" [(ngModel)]="page" (ngModelChange)="changePage($event)">
+  <div class="w-60 left">
+    <input type="text" class="button-light left" [(ngModel)]="page"
+           (ngModelChange)="changePage($event)">
+  </div>
 </div>
 <div class="clearfix h-30"></div>
 <table>
   <thead>
-  <th (click)="sortData('Id')"><span class="left">{{"item.id" | translate}}</span> <span class="right chevron">{{"Id" | chevron: sortParams.order: sortParams.key}}</span></th>
-  <th (click)="sortData('Budget')"><span class="left">{{"item.budget" | translate}}</span> <span class="right chevron">{{"Budget" | chevron: sortParams.order: sortParams.key}}</span></th>
+  <th (click)="sortData('Id')"><span class="left">{{"item.id" | translate}}</span> <span
+    class="right chevron">{{"Id" | chevron: sortParams.order: sortParams.key}}</span></th>
+  <th (click)="sortData('Budget')"><span class="left">{{"item.budget" | translate}}</span> <span
+    class="right chevron">{{"Budget" | chevron: sortParams.order: sortParams.key}}</span></th>
   <th class="name"><span class="left">{{"item.reqName" | translate}}</span></th>
-  <th  (click)="sortData('Deadline')"><span class="left">{{"item.deadline" | translate}}</span> <span class="right chevron">{{"Deadline" | chevron: sortParams.order: sortParams.key}}</span></th>
+  <th (click)="sortData('Deadline')"><span class="left">{{"item.deadline" | translate}}</span> <span
+    class="right chevron">{{"Deadline" | chevron: sortParams.order: sortParams.key}}</span></th>
   <th class="desc"><span class="left">{{"item.description" | translate}}</span></th>
   <th><span class="left">{{"item.goodEnding" | translate}}</span></th>
   <th><span class="left">{{"item.needStoryteller" | translate}}</span></th>
   <th><span class="left">{{"item.storyteller" | translate}}</span></th>
   <th><span class="left">{{"item.requestor" | translate}}</span></th>
   <th><span class="left">{{"item.wantedCharacters" | translate}}</span></th>
-  <th (click)="sortData('Status')"><span class="left">{{"item.status" | translate}}</span> <span class="right chevron">{{"Status" | chevron: sortParams.order: sortParams.key}}</span></th>
+  <th (click)="sortData('Status')"><span class="left">{{"item.status" | translate}}</span> <span
+    class="right chevron">{{"Status" | chevron: sortParams.order: sortParams.key}}</span></th>
   </thead>
   <tbody>
   <tr *ngFor="let request of requests">
@@ -36,7 +44,8 @@
     <td>{{request.Budget}}</td>
     <td>{{request.RequestName}}</td>
     <td>{{request.Deadline | date: 'yyyy-MM-dd'}}</td>
-    <td title="{{request.Description | slice: 0:500}}">{{request.Description.length > 50 ? (request.Description | slice:0:49) + '...' : request.Description}}</td>
+    <td
+      title="{{request.Description | slice: 0:500}}">{{request.Description.length > 50 ? (request.Description | slice:0:49) + '...' : request.Description}}</td>
     <td>{{request.GoodEnding}}</td>
     <td>{{request.NeedStoryteller}}</td>
     <td>{{request.Storyteller}}</td>

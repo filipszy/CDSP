@@ -10,6 +10,9 @@
   "search": "Search",
   "updateRequest": "Update Request",
   "createRequest": "Create Request",
+  "submit": "Submit",
+  "saveDraft": "Save as draft",
+  "cancel": "Cancel",
   "item": {
     "id": "ID",
     "budget": "Budget",

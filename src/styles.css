@@ -39,6 +39,10 @@ a:hover {
   width: 30px;
 }
 
+.w-60 {
+  width: 60px;
+}
+
 .title {
   width: 100%;
   font-size: 23px;
@@ -127,8 +131,14 @@ input[type=radio] {
   font-size: 15px !important;
 }
 
-.ng-invalid {
-  border-color: #831605 !important;
+.form-error {
+  font-size: 13px;
+  color: #b41700;
+  margin-top: 5px;
+}
+
+.ng-invalid.ng-touched {
+  border-color: #B41700 !important;
 }
 
 input[type=text], .multiselect-dropdown {

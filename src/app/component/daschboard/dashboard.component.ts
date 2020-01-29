@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {RequestService} from '../service/request.service';
+import {RequestService} from '../../service/request.service';
 import {Request} from '../../model/request';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';

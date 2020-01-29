@@ -1,0 +1,73 @@
+<div class="title">
+  {{"createRequest" | translate}}
+</div>
+<div class="clearfix"></div>
+<form [formGroup]="requestForm">
+  <div class="form-group">
+    <label for="reqName">{{"item.reqName" | translate}}*</label>
+    <input id="reqName" type="text" formControlName="RequestName" placeholder="{{'item.reqName' | translate}}"/>
+    <app-control-mesages [control]="requestForm.get('RequestName')"></app-control-mesages>
+  </div>
+  <div>
+    <div class="form-group half">
+      <label>{{"item.requestor" | translate}}*</label>
+      <ng-multiselect-dropdown [data]="users" [settings]="requestorSettings" formControlName="Requestor"></ng-multiselect-dropdown>
+      <app-control-mesages [control]="requestForm.get('Requestor')"></app-control-mesages>
+    </div>
+    <div class="form-group half">
+      <label>{{"item.goodEnding" | translate}}*</label><br>
+      <input type="radio" formControlName="GoodEnding" value="Yes" id="Yes"/> <label for="Yes" class="radio-label">Yes</label>
+      <input type="radio" formControlName="GoodEnding" value="Depends" id="Depends"/>  <label for="Depends" class="radio-label">Depends</label>
+      <input type="radio" formControlName="GoodEnding" value="No" id="No"/> <label for="No" class="radio-label">No</label><br>
+      <app-control-mesages [control]="requestForm.get('GoodEnding')"></app-control-mesages>
+    </div>
+  </div>
+  <div class="form-group">
+    <label for="description">{{"item.description" | translate}}*</label>
+    <textarea id="description" formControlName="Description"></textarea>
+    <app-control-mesages [control]="requestForm.get('Description')"></app-control-mesages>
+  </div>
+  <div>
+    <div class="form-group half">
+      <label>{{"item.needStoryteller" | translate}}*</label><br>
+      <input type="radio" formControlName="NeedStoryteller" value="true" id="True"/> <label for="True" class="radio-label">True</label>
+      <input type="radio" formControlName="NeedStoryteller" value="false" id="False"/> <label for="False" class="radio-label">False</label><br>
+      <app-control-mesages [control]="requestForm.get('NeedStoryteller')"></app-control-mesages>
+    </div>
+    <div class="form-group half" [hidden]="requestForm.get('NeedStoryteller').value == 'false' || requestForm.get('NeedStoryteller').value == ''">
+      <label for="storyteller">{{"item.storyteller" | translate}}*</label>
+      <input id="storyteller" type="text" formControlName="Storyteller" placeholder="{{'item.storyteller' | translate}}"/>
+      <app-control-mesages [control]="requestForm.get('Storyteller')"></app-control-mesages>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+  <div>
+    <div class="form-group half">
+      <label>{{"item.wantedCharacters" | translate}}</label>
+      <ng-multiselect-dropdown [data]="wantedCharacters" [settings]="wantedSettings" formControlName="WantedCharacters"></ng-multiselect-dropdown>
+      <app-control-mesages [control]="requestForm.get('WantedCharacters')"></app-control-mesages>
+    </div>
+    <div class="form-group half">
+      <label for="deadline">{{"item.deadline" | translate}}</label>
+      <input id="deadline" type="text" formControlName="Deadline" placeholder="{{'item.deadline' | translate}}"/>
+      <app-control-mesages [control]="requestForm.get('Deadline')"></app-control-mesages>
+    </div>
+  </div>
+  <div>
+    <div class="form-group half">
+      <label for="budget">{{"item.budget" | translate}}*</label>
+      <input id="budget" type="text" formControlName="Budget" placeholder="{{'item.budget' | translate}}"/>
+      <app-control-mesages [control]="requestForm.get('Budget')"></app-control-mesages>
+    </div>
+    <div class="form-group half hide">
+      <label for="status">{{"item.status" | translate}}</label>
+      <input id="status" type="text" formControlName="Status" placeholder="{{'item.status' | translate}}"/>
+    </div>
+  </div>
+  <div class="clearfix h-30"></div>
+  <div>
+    <button class="button" (click)="submit()">{{"submit" | translate}}</button>
+    <button class="button-light" (click)="saveAsDraft()">{{"saveDraft" | translate}}</button>
+    <button class="button-light" routerLink="/dashboard">{{"cancel" | translate}}</button>
+  </div>
+</form>
