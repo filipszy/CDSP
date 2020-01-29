@@ -11,7 +11,7 @@
   <div>
     <div class="form-group half">
       <label>{{"item.requestor" | translate}}*</label>
-      <ng-multiselect-dropdown [data]="users" [settings]="requestorSettings" formControlName="Requestor"></ng-multiselect-dropdown>
+      <ng-multiselect-dropdown [data]="users" [settings]="formConfig.requestorSettings()" formControlName="Requestor"></ng-multiselect-dropdown>
       <app-control-mesages [control]="requestForm.get('Requestor')"></app-control-mesages>
     </div>
     <div class="form-group half">
@@ -44,7 +44,7 @@
   <div>
     <div class="form-group half">
       <label>{{"item.wantedCharacters" | translate}}</label>
-      <ng-multiselect-dropdown [data]="wantedCharacters" [settings]="wantedSettings" formControlName="WantedCharacters"></ng-multiselect-dropdown>
+      <ng-multiselect-dropdown [data]="wantedCharacters" [settings]="formConfig.wantedSettings()" formControlName="WantedCharacters"></ng-multiselect-dropdown>
       <app-control-mesages [control]="requestForm.get('WantedCharacters')"></app-control-mesages>
     </div>
     <div class="form-group half">
@@ -52,7 +52,7 @@
 <!--
       <input id="deadline" type="text" formControlName="Deadline" placeholder="{{'item.deadline' | translate}}"/>
 -->
-      <dp-date-picker formControlName="Deadline" [config]="configCalendar"></dp-date-picker>
+      <dp-date-picker formControlName="Deadline" [config]="formConfig.configCalendar()"></dp-date-picker>
       <app-control-mesages [control]="requestForm.get('Deadline')"></app-control-mesages>
     </div>
   </div>

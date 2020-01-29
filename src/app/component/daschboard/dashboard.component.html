@@ -39,7 +39,7 @@
     class="right chevron">{{"Status" | chevron: sortParams.order: sortParams.key}}</span></th>
   </thead>
   <tbody>
-  <tr *ngFor="let request of requests">
+  <tr *ngFor="let request of requests" (click)="navigate(request.Id)">
     <td>{{request.Id}}</td>
     <td>{{request.Budget}}</td>
     <td>{{request.RequestName}}</td>

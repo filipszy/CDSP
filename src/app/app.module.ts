@@ -22,6 +22,7 @@ export function translateLoader(http: HttpClient) {
 const appRoutes: Routes = [
   {path: 'dashboard', component: DashboardComponent},
   {path: 'form', component: FormComponent},
+  {path: 'form/:id', component: FormComponent},
   {path: '', redirectTo: '/dashboard', pathMatch: 'full'}
 ];
 

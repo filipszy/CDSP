@@ -230,6 +230,11 @@ tr {
   border-bottom: #818283;
 }
 
+tr:hover {
+  background-color: #C9CACB;
+  cursor: pointer;
+}
+
 td {
   width: auto;
   padding: 10px 10px;

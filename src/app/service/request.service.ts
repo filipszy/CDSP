@@ -29,9 +29,23 @@ export class RequestService {
     );
   }
 
+  public getRequestById(id: number): Observable<Request> {
+    return this.httpClient.get(`/api/Requests?Id=${id}`).pipe(
+      map(response => response as Request)
+    );
+  }
+
   public getLimitedRequests(page: number, limit: number): Observable<Request[]> {
     return this.httpClient.get(`/api/Requests?_page=${page}&_limit=${limit}`).pipe(
       map(response => response as Request[])
     );
+  }
+
+  public saveRequest(request: Request): Observable<any> {
+    return this.httpClient.post('/api/Requests', request);
+  }
+
+  public updateRequest(request: Request): Observable<any> {
+    return this.httpClient.put('/api/Requests/' + request.Id, request);
   }
 }

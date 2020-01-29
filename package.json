@@ -23,6 +23,7 @@
     "@angular/router": "~8.2.14",
     "@ngx-translate/core": "^11.0.1",
     "@ngx-translate/http-loader": "^4.0.0",
+    "moment": "^2.24.0",
     "ng-multiselect-dropdown": "^0.2.10",
     "ng2-date-picker": "^8.0.0",
     "rxjs": "~6.4.0",

@@ -2,6 +2,7 @@ import {Status} from './status.enum';
 
 export interface Request {
   Id: number;
+  id?: number;
   RequestName: string;
   Requestor: number;
   GoodEnding: string;

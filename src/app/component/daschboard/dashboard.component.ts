@@ -4,6 +4,7 @@ import {Request} from '../../model/request';
 import {Subject} from 'rxjs';
 import {debounceTime} from 'rxjs/operators';
 import {SortParams} from '../../model/sort-params';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-dashboard',
@@ -22,7 +23,7 @@ export class DashboardComponent implements OnInit {
   private searchSub = new Subject<string>();
   private sortParams: SortParams;
 
-  constructor(private requestService: RequestService) {
+  constructor(private requestService: RequestService, private router: Router) {
     this.sortParams = {key: '', order: ''};
     this.limitRequests = 10;
     this.pageChanged.pipe(
@@ -45,6 +46,10 @@ export class DashboardComponent implements OnInit {
     this.page = 1;
     this.getRequestsPagination(this.page);
     this.loadData();
+  }
+
+  private navigate(id: number) {
+    this.router.navigate([`/form/${id}`]);
   }
 
   private sortData(key: string, order?: string) {
