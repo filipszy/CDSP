@@ -141,6 +141,10 @@ input[type=radio] {
   border-color: #B41700 !important;
 }
 
+dp-date-picker {
+  width: 100%;
+}
+
 input[type=text], .multiselect-dropdown {
   width: calc(100% - 30px) !important;
   height: 40px;

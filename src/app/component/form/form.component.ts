@@ -4,6 +4,7 @@ import { IDropdownSettings } from 'ng-multiselect-dropdown';
 import {User} from '../../model/user';
 import {UsersService} from '../../service/users.service';
 import {Subscription} from '../../model/subscription';
+import {ECalendarValue, IDatePickerConfig} from 'ng2-date-picker';
 
 
 @Component({
@@ -18,6 +19,7 @@ export class FormComponent implements OnInit, OnDestroy {
   private wantedSettings: IDropdownSettings;
   private requestorSettings: IDropdownSettings;
   private users: User[];
+  private configCalendar: IDatePickerConfig;
   private subscription: Subscription[];
 
   constructor(private formBuilder: FormBuilder, private usersService: UsersService) {
@@ -55,6 +57,42 @@ export class FormComponent implements OnInit, OnDestroy {
       textField: 'DisplayName',
       itemsShowLimit: 5,
       allowSearchFilter: true
+    };
+    this.configCalendar = {
+      firstDayOfWeek: 'su',
+      monthFormat: 'MMM, YYYY',
+      disableKeypress: false,
+      allowMultiSelect: false,
+      closeOnSelect: undefined,
+      closeOnSelectDelay: 100,
+      openOnFocus: true,
+      openOnClick: true,
+      onOpenDelay: 0,
+      weekDayFormat: 'ddd',
+      appendTo: document.body,
+      showNearMonthDays: true,
+      showWeekNumbers: false,
+      enableMonthSelector: true,
+      yearFormat: 'YYYY',
+      showGoToCurrent: true,
+      dayBtnFormat: 'DD',
+      monthBtnFormat: 'MMM',
+      hours12Format: 'hh',
+      hours24Format: 'HH',
+      meridiemFormat: 'A',
+      minutesFormat: 'mm',
+      minutesInterval: 1,
+      secondsFormat: 'ss',
+      secondsInterval: 1,
+      showSeconds: false,
+      showTwentyFourHours: false,
+      timeSeparator: ':',
+      multipleYearsNavigateBy: 10,
+      showMultipleYearsNavigation: false,
+      hideInputContainer: false,
+      returnedValueType: ECalendarValue.String,
+      unSelectOnClick: true,
+      hideOnOutsideClick: true
     };
   }
 
@@ -102,11 +140,7 @@ export class FormComponent implements OnInit, OnDestroy {
   }
 
   private saveAsDraft() {
-    if (this.requestForm.dirty && this.requestForm.valid) {
-      alert(
-        `Name: ${this.requestForm.value.name} Email: ${this.requestForm.value.email}`
-      );
-    }
+      console.log('FORM', this.requestForm);
   }
 
   private submit() {
